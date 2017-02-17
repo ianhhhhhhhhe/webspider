@@ -38,10 +38,6 @@ PATH = {
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
-# Feed Export
-FEED_URI = 'web.csv'
-FEED_FORMAT = 'CSV'
-
 # Logging Config
 LOG_ENABLED = True
 LOG_ENCODING = 'utf-8'
@@ -96,7 +92,9 @@ COOKIES = {}
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'web.pipelines.JsonWriterPipeline': 700,
-    #'web.pipelines.MongoWriterPipeline': 700,
+    #'web.pipelines.JsonLinesWriterPipeline': 700,
+    #'web.pipelines.CsvWriterPipeline': 700,
+    #'web.pipelines.XmlWriterPipeline': 700,
 }
 
 # Notification e-mail address

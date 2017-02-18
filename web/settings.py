@@ -79,7 +79,7 @@ COOKIES = {}
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'web.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'web.DownloaderMiddlewares.BSDownloaderMiddlewares.BeautifulSoupMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -91,10 +91,10 @@ COOKIES = {}
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'web.pipelines.JsonWriterPipeline': 700,
-    'web.pipelines.JsonLinesWriterPipeline': 700,
-    'web.pipelines.CsvWriterPipeline': 700,
-    'web.pipelines.XmlWriterPipeline': 700,
+    'web.Pipelines.JsonItemExporter.JsonWriterPipeline': 700,
+    'web.Pipelines.JsonLinesItemExporter.JsonLinesWriterPipeline': 700,
+    'web.Pipelines.CsvItemExporter.CsvWriterPipeline': 700,
+    'web.Pipelines.XmlItemExporter.XmlWriterPipeline': 700,
 }
 
 # Notification e-mail address

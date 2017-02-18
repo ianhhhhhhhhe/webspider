@@ -6,8 +6,7 @@ class webSpider(scrapy.Spider):
     name = "web"
 
     def start_requests(self):
-        for url in self.settings.get('URLS'):
-            print(url)
+        for url in self.settings.get('PATH').keys():
             yield scrapy.Request(url=url,
                                  cookies = self.settings.get('COOKIES'),
                                  callback=self.parse,)

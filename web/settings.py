@@ -14,11 +14,6 @@ BOT_NAME = 'web'
 SPIDER_MODULES = ['web.spiders']
 NEWSPIDER_MODULE = 'web.spiders'
 
-URLS = [
-    'http://www.nwu.edu.cn/',
-    'http://ipc.nwu.edu.cn/'
-]
-
 PATH = {
     'http://www.nwu.edu.cn/': {
         'ROOT':'//*[@id="newslist"]/li',

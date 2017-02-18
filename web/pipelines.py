@@ -24,6 +24,9 @@ class BasicPipeline(object):
         crawler.signals.connect(pipeline.spider_closed, signals.spider_closed)
         return pipeline
 
+    def spider_opened(self, spider):
+        pass
+
     def process_item(self, item, spider):
         if item['title'] and item['link']:
             self.exporter.export_item(item)
@@ -38,28 +41,28 @@ class BasicPipeline(object):
 
 class JsonWriterPipeline(BasicPipeline):
     def spider_opened(self, spider):
-        file = open('%s_items.json' % spider.name, 'w+b')
+        file = open('%s_items.json' % spider.name, 'wb')
         self.files[spider] = file
         self.exporter = JsonItemExporter(file)
         self.exporter.start_exporting()
 
 class JsonLinesWriterPipeline(BasicPipeline):
     def spider_opened(self, spider):
-        file = open('%s_items.jl' % spider.name, 'w+b')
+        file = open('%s_items.jl' % spider.name, 'wb')
         self.files[spider] = file
-        self.exporter = JsonLinesWriterPipeline(file)
+        self.exporter = JsonLinesItemExporter(file)
         self.exporter.start_exporting()
 
 class CsvWriterPipeline(BasicPipeline):
     def spider_opened(self, spider):
-        file = open('%s_items.csv' % spider.name, 'w+b')
+        file = open('%s_items.csv' % spider.name, 'wb')
         self.files[spider] = file
         self.exporter = CsvItemExporter(file)
         self.exporter.start_exporting()
 
 class XmlWriterPipeline(BasicPipeline):
     def spider_opened(self, spider):
-        file = open('%s_items.xml' % spider.name, 'w+b')
+        file = open('%s_items.xml' % spider.name, 'wb')
         self.files[spider] = file
         self.exporter = XmlItemExporter(file)
         self.exporter.start_exporting()

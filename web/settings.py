@@ -92,9 +92,9 @@ COOKIES = {}
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'web.pipelines.JsonWriterPipeline': 700,
-    #'web.pipelines.JsonLinesWriterPipeline': 700,
-    #'web.pipelines.CsvWriterPipeline': 700,
-    #'web.pipelines.XmlWriterPipeline': 700,
+    'web.pipelines.JsonLinesWriterPipeline': 700,
+    'web.pipelines.CsvWriterPipeline': 700,
+    'web.pipelines.XmlWriterPipeline': 700,
 }
 
 # Notification e-mail address

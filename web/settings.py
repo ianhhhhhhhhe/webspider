@@ -25,6 +25,17 @@ PATH = {
         'TITLE':'strong/a/text()',
         'LINK':'strong/a/@href',
     },
+#    'https://www.v2ex.com/?tab=tech': {
+#        'ROOT':'//span[@class="item_title"]',
+#        'TITLE':'a/text()',
+#        'LINK':'a/@href',
+#    },
+#    'https://www.v2ex.com/go/python': {
+#        'ROOT':'//span[@class="item_title"]',
+#        'TITLE':'a/text()',
+#        'LINK':'a/@href',
+#        'NEXT_PAGE':'//a[@class="page_normal"]',
+#    },
 }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -86,10 +97,10 @@ COOKIES = {}
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'web.Pipelines.JsonItemExporter.JsonWriterPipeline': 700,
+#    'web.Pipelines.JsonItemExporter.JsonWriterPipeline': 700,
     'web.Pipelines.JsonLinesItemExporter.JsonLinesWriterPipeline': 700,
-    'web.Pipelines.CsvItemExporter.CsvWriterPipeline': 700,
-    'web.Pipelines.XmlItemExporter.XmlWriterPipeline': 700,
+#    'web.Pipelines.CsvItemExporter.CsvWriterPipeline': 700,
+#    'web.Pipelines.XmlItemExporter.XmlWriterPipeline': 700,
 }
 
 # Notification e-mail address

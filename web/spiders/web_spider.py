@@ -14,9 +14,10 @@ class webSpider(scrapy.Spider):
 
     def parse(self, response):
         try:
-            root = self.settings.get('PATH')[response.url]['ROOT']
-            title = self.settings.get('PATH')[response.url]['TITLE']
-            link = self.settings.get('PATH')[response.url]['LINK']
+            path = self.settings.get('PATH')[response.url]
+            root = path['ROOT']
+            title = path['TITLE']
+            link = path['LINK']
         except TypeError:
             raise NotConfigured('PATH should be a dict value')
         except:

@@ -15,27 +15,27 @@ SPIDER_MODULES = ['web.spiders']
 NEWSPIDER_MODULE = 'web.spiders'
 
 PATH = {
-    'http://www.nwu.edu.cn/': {
-        'ROOT':'//*[@id="newslist"]/li',
+#    'http://www.nwu.edu.cn/': {
+#        'ROOT':'//*[@id="newslist"]/li',
+#        'TITLE':'a/text()',
+#        'LINK':'a/@href',
+#    },
+#    'http://ipc.nwu.edu.cn/?do=index': {
+#        'ROOT':'//*[@id="main"]/div/p',
+#        'TITLE':'strong/a/text()',
+#        'LINK':'strong/a/@href',
+#    },
+    'https://www.v2ex.com/?tab=tech': {
+        'ROOT':'//span[@class="item_title"]',
         'TITLE':'a/text()',
         'LINK':'a/@href',
     },
-    'http://ipc.nwu.edu.cn/?do=index': {
-        'ROOT':'//*[@id="main"]/div/p',
-        'TITLE':'strong/a/text()',
-        'LINK':'strong/a/@href',
+    'https://www.v2ex.com/go/python': {
+        'ROOT':'//span[@class="item_title"]',
+        'TITLE':'a/text()',
+        'LINK':'a/@href',
+        'NEXT_PAGE':'//a[@class="page_normal"]',
     },
-#    'https://www.v2ex.com/?tab=tech': {
-#        'ROOT':'//span[@class="item_title"]',
-#        'TITLE':'a/text()',
-#        'LINK':'a/@href',
-#    },
-#    'https://www.v2ex.com/go/python': {
-#        'ROOT':'//span[@class="item_title"]',
-#        'TITLE':'a/text()',
-#        'LINK':'a/@href',
-#        'NEXT_PAGE':'//a[@class="page_normal"]',
-#    },
 }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
